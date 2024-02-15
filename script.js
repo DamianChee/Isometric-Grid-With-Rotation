@@ -1,12 +1,17 @@
-var column = 3, // Change this to change number of columns in the grid
-  row = 3, // Change this to change number of rows in the grid
-  squareSize = 100, // Change this to change the size of grid squares
-  containerElement = document.querySelector(".container");
+// Declare Global Variables
+var column = 3; // Change this to change number of columns in the grid
+var row = 3; // Change this to change number of rows in the grid
+var squareSize = 100; // Change this to change the size of grid squares
 
-let rotationX = 65,
-  rotationY = 0,
-  rotationZ = 45;
+// Declare variables here
+let rotationX = 65;
+let rotationY = 0;
+let rotationZ = 45;
 
+// Declare constant variables here
+const containerElement = document.querySelector(".container");
+
+// Event Listeners
 window.addEventListener("keydown", function (event) {
   if (event.code === "KeyE") {
     rotationZ += 45;
@@ -31,6 +36,7 @@ window.addEventListener("keydown", function (event) {
   }
 });
 
+// Create/populate grid into the container
 for (let i = 0; i < column; ++i) {
   const col = document.createElement("div");
   col.className = "column";
@@ -49,10 +55,10 @@ for (let i = 0; i < column; ++i) {
   containerElement.appendChild(col);
 }
 
-const rowElement = document.querySelector(".square");
-
 // gridSize is the size of each grid, multiplied by the number of columns
 // and rows dynamically. The 6 multiplied by column and row is to make space
 // for padding, margins and borders
+//
+// Set the width and height for container for border shenanigans
 containerElement.style.width = `${squareSize * column + 6 * column}px`;
 containerElement.style.height = `${squareSize * row + 6 * row}px`;

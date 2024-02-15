@@ -23,12 +23,21 @@ body {
   justify-content: center;
 
   flex-wrap: wrap;
+  flex-direction: column;
+}
+
+body > p {
+  font-size: xx-large;
+  font-weight: 900;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 2px;
+  color: bisque;
 }
 
 /* Window for sandbox and playing around in */
 /* Flex Container */
 #root {
-  border: 3px black solid;
+  border: 3px solid grey;
   background-color: black;
 
   width: 1024px;
@@ -48,15 +57,12 @@ body {
 /* Container to keep all the squares */
 .container {
   border: 3px solid blue;
-
   padding: 5px;
 
   display: flex;
   justify-content: space-between;
 
-  /* transform: rotate(0); */
   transition: all 0.5s;
-
   transform: rotateX(65deg) rotateZ(45deg);
   -webkit-transform: rotateX(65deg) rotateZ(45deg);
 
@@ -72,7 +78,6 @@ body {
   .square {
     border: 3px solid green;
     background-color: white;
-
     text-align: center;
 
     display: flex;
